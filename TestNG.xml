@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" name="Suite" parallel="tests" >
+    <test name="1stTest" parallel="methods" thread-count="5">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="FirstTest">
+                <methods>
+                    <include name="GOOGLE1" />
+                    <include name="GOOGLE2" />
+                    <include name="GOOGLE3" />
+                </methods>
+            </class>
+        </classes>
+    </test> <!-- First Test -->
+    <test name="2ndTest"  parallel="methods" thread-count="5">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="SecondTest">
+                <methods>
+                    <include name="GOOGLE4" />
+                    <include name="YANDEX" />
+                </methods>
+            </class>
+        </classes>
+    </test> <!-- Second Test -->
+
+    <test name="3rdTest"  parallel="methods" thread-count="5">
+        <parameter name="browser" value="ie"/>
+        <classes>
+            <class name="SecondTest">
+                <methods>
+                    <include name="GOOGLE4" />
+                    <include name="YANDEX" />
+                </methods>
+            </class>
+        </classes>
+    </test> <!-- Second Test -->
+</suite> <!-- Suite -->
